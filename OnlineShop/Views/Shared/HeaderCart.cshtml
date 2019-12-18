@@ -1,0 +1,12 @@
+﻿
+@model List<OnlineShop.Models.CartItem>
+<div class="cart">
+    <p>
+      <span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
+            @Model.Count Products
+            <ul class="dropdown">
+                <li> There are @Model.Count products in cart</li>
+            </ul>
+        </div>
+    </p>
+</div>

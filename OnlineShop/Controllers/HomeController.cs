@@ -3,28 +3,59 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Model.EF;
+using Model.Lib;
+using OnlineShop.Common;
+using OnlineShop.Models;
 
 namespace OnlineShop.Controllers
 {
     public class HomeController : Controller
     {
+        public int CartSession { get; private set; }
+
+        // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Slides = new SlideLib().ListAll();
+            var productLib = new ProductLib();
+            ViewBag.NewProducts = productLib.ListNewProduct(4);
+            ViewBag.ListFeatureProducts = productLib.ListFeatureProduct(4);
             return View();
         }
 
-        public ActionResult About()
+        [ChildActionOnly]
+        public ActionResult MainMenu()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var model = new MenuLib().ListByGroupId(1);
+            return PartialView(model);
         }
 
-        public ActionResult Contact()
+        [ChildActionOnly]
+        public ActionResult TopMenu()
         {
-            ViewBag.Message = "Your contact page.";
+            var model = new MenuLib().ListByGroupId(2);
+            return PartialView(model);
+        }
 
-            return View();
+        [ChildActionOnly]
+        public PartialViewResult HeaderCart()
+        {
+            var cart = Session[CommonConstants.CartSession];
+            var list = new List<CartItem>();
+            if (cart != null)
+            {
+                list = (List<CartItem>)cart;
+            }
+            return PartialView(list);
+        }
+        [ChildActionOnly]
+        public ActionResult Footer()
+        {
+            var model = new FooterLib().GetFooter();
+            return PartialView(model);
         }
     }
+
+   
 }

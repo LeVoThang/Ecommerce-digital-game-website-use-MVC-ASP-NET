@@ -26,18 +26,24 @@
 <body>
     <div id="wrapper">
         <!-- Navigation -->
-      
+        @RenderPage("_Navigation.cshtml")
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                       
+
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
-         
+                @if (TempData["AlertMessage"] !=null )
+                {
+                    <div id="AlertBox" class="alert @TempData["AlertType"]  hide">
+                      @TempData["AlertMessage"]  
+                    </div>
+                }
+
 
                 @RenderBody()
             </div>
@@ -58,6 +64,6 @@
     <script src="/assets/admin/js/plugins/ckeditor/ckeditor.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="/assets/admin/dist/js/sb-admin-2.js"></script>
-
+    @RenderSection("jsFooter", required: false)
 </body>
 </html>

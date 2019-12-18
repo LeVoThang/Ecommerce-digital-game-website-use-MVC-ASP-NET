@@ -45,6 +45,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 long id = lib.Insert(user);
                 if (id > 0)
                 {
+                    SetAlert("Add user successfully ", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -71,6 +72,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 var result = lib.Update(user);
                 if (result)
                 {
+                    SetAlert("Edit user successfully ", "success");
                     return RedirectToAction("Index", "User");
                 }
                 else
@@ -85,6 +87,16 @@ namespace OnlineShop.Areas.Admin.Controllers
         {
             new UserLib().Delete(id);
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public JsonResult ChangeStatus(long id)
+        {
+            var result = new UserLib().ChangeStatus(id);
+            return Json(new
+            {
+                status = result
+            });
         }
 
     }

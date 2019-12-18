@@ -45,5 +45,11 @@ namespace Model.EF
         public string MetaDescriptions { get; set; }
 
         public bool? Status { get; set; }
+
+        [StringLength(500)]
+        public string Tag { get; set; }
+
+        [StringLength(50)]
+        public string MetaTitle { get; set; }
     }
 }

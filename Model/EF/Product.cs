@@ -14,7 +14,7 @@ namespace Model.EF
         [StringLength(250)]
         public string Name { get; set; }
 
-        [StringLength(250)]
+        [StringLength(2500)]
         public string Description { get; set; }
 
         [StringLength(250)]
@@ -50,5 +50,7 @@ namespace Model.EF
         public string MetaDescriptions { get; set; }
 
         public bool? Status { get; set; }
+
+        public DateTime? TopHot { get; set; }
     }
 }
