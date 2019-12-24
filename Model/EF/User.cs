@@ -29,6 +29,10 @@ namespace Model.EF
         [StringLength(50)]
         public string Phone { get; set; }
 
+        public int? ProvinceID { set; get; }
+
+        public int? DistrictID { set; get; }
+
         public DateTime? CreateDate { get; set; }
 
         [StringLength(50)]

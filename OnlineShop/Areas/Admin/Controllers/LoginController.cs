@@ -25,7 +25,7 @@ namespace OnlineShop.Areas.Admin.Controllers
                 var result = lib.Login(model.Username, Encryptor.MD5Hash(model.Password));
                 if (result == 1)
                 {
-                    var user = lib.GetByID(model.Username);
+                    var user = lib.GetById(model.Username);
                     var userSession = new UserLogin();
                     userSession.UserName = user.UserName;
                     userSession.UserID = user.ID;

@@ -143,5 +143,7 @@ namespace Model.EF
                 .Property(e => e.ModifiedBy)
                 .IsUnicode(false);
         }
+
+       
     }
 }

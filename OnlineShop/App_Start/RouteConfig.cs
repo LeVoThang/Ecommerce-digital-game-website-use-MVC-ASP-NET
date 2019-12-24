@@ -13,6 +13,7 @@ namespace OnlineShop
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+           
             routes.MapRoute(
               name: "Product Category",
               url: "product/{metatitle}-{cateId}",
@@ -40,6 +41,20 @@ namespace OnlineShop
          defaults: new { controller = "Cart", action = "Index", id = UrlParameter.Optional },
          namespaces: new[] { "OnlineShop.Controllers" }
      );
+
+            routes.MapRoute(
+       name: "Login",
+       url: "login",
+       defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
+       namespaces: new[] { "OnlineShop.Controllers" }
+   );
+
+            routes.MapRoute(
+        name: "Register",
+        url: "register",
+        defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
+        namespaces: new[] { "OnlineShop.Controllers" }
+    );
 
             routes.MapRoute(
             name: "Add Cart",
