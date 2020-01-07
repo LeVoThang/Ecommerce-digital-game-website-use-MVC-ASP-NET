@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using Model.EF;
 using Model.Lib;
 using OnlineShop.Common;
@@ -25,6 +26,7 @@ namespace OnlineShop.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = 3600 * 24)]
         public ActionResult MainMenu()
         {
             var model = new MenuLib().ListByGroupId(1);
@@ -32,6 +34,7 @@ namespace OnlineShop.Controllers
         }
 
         [ChildActionOnly]
+        [OutputCache(Duration = 3600 * 24)]
         public ActionResult TopMenu()
         {
             var model = new MenuLib().ListByGroupId(2);
@@ -50,6 +53,7 @@ namespace OnlineShop.Controllers
             return PartialView(list);
         }
         [ChildActionOnly]
+        [OutputCache(Duration = 3600 * 24)]
         public ActionResult Footer()
         {
             var model = new FooterLib().GetFooter();

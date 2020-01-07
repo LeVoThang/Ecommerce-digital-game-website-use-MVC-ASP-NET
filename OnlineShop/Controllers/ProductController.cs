@@ -28,6 +28,7 @@ namespace OnlineShop.Controllers
             return View(category);
         }
 
+        [OutputCache(CacheProfile = "Cache1DayForProduct")]
         public ActionResult Detail(long id)
         {
             var product = new ProductLib().ViewDetail(id);

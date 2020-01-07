@@ -84,6 +84,12 @@ namespace OnlineShop
                  namespaces: new[] { "OnlineShop.Controllers" }
            );
 
+            routes.MapRoute(
+                 name: "Admin login",
+                 url: "Admin/Login",
+                 defaults: new { controller = "Admin", action = "Login", id = UrlParameter.Optional },
+                 namespaces: new[] { "OnlineShop.Controllers" }
+           );
 
         }
     }
