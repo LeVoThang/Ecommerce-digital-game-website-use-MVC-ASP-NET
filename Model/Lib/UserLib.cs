@@ -57,7 +57,7 @@ namespace Model.Lib
             {
                 model = model.Where(x => x.UserName.Contains(searchString) || x.Name.Contains(searchString));
             }
-            return model.OrderByDescending(x => x.CreateDate).ToPagedList(page, pageSize);
+            return model.OrderByDescending(x => x.CreatedDate).ToPagedList(page, pageSize);
         }
 
         public User GetById(string userName)

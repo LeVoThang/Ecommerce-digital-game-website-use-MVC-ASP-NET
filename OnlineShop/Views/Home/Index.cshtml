@@ -52,7 +52,7 @@
     <div class="section group">
         @foreach (var item in listFeatureProducts)
         {
-            var url = "/detail/" + item.MetaTiltle + "-" + item.ID;
+            var url = "/detail/" + item.MetaTitle + "-" + item.ID;
             <div class="grid_1_of_4 images_1_of_4">
                 <a href="@url"><img src="@item.Image" alt="@item.Name" /></a>
                 <h2>@item.Name</h2>
@@ -81,7 +81,7 @@
     <div class="section group">
         @foreach (var item in listNewProducts)
         {
-            var url = "/detail/" + item.MetaTiltle + "-" + item.ID;
+            var url = "/detail/" + item.MetaTitle + "-" + item.ID;
             <div class="grid_1_of_4 images_1_of_4">
                 <a href="@url"><img src="@item.Image" alt="@item.Name" /></a>
                 <h2>@item.Name</h2>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="clear"></div>
                 </div>
-
+                
             </div>
         }
     </div>

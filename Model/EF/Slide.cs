@@ -22,7 +22,7 @@ namespace Model.EF
         [StringLength(50)]
         public string Description { get; set; }
 
-        public DateTime? CreateDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         [StringLength(50)]
         public string CreatedBy { get; set; }

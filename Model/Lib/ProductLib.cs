@@ -17,7 +17,7 @@ namespace Model.Lib
 
         public List<Product> ListNewProduct(int top)
         {
-            return db.Products.OrderByDescending(x => x.CreateDate).Take(top).ToList();
+            return db.Products.OrderByDescending(x => x.CreatedDate).Take(top).ToList();
         }
 
         public List<Product> ListFeatureProduct(int top)

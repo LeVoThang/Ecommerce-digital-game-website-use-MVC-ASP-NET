@@ -28,7 +28,7 @@ namespace Model.EF
         [StringLength(250)]
         public string MetaTiltle { get; set; }
 
-        public DateTime? CreateDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         [StringLength(50)]
         public string CreatedBy { get; set; }

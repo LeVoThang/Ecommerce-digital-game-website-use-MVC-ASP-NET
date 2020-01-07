@@ -26,7 +26,7 @@ namespace Model.EF
         [StringLength(50)]
         public string Address { get; set; }
 
-        public DateTime? CreateDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         public bool? Status { get; set; }
     }

@@ -97,7 +97,7 @@ namespace OnlineShop.Controllers
                     user.Phone = model.Phone;
                     user.Email = model.Email;
                     user.Address = model.Address;
-                    user.CreateDate = DateTime.Now;
+                    user.CreatedDate = DateTime.Now;
                     user.Status = true;
                     if (!string.IsNullOrEmpty(model.ProvinceID))
                     {
